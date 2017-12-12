@@ -1,13 +1,15 @@
-/* Main file for calculator.h
-*/
+/* This is a simple header file for a calcualtor program. 
+ */
 
-#include<iostream>
-#include"Calculator.hpp"
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
 
-int Calculator::sum(int a, int b){
-  		return a+b; 
-}
+class Calculator {
+public:
+  int sum(int x, int y);
+  int subs( int x, int y); 
 
-int Calculator::subs(int a, int b){
-  		return a-b; 
-} 
+}; 
+
+
+#endif 

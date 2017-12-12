@@ -30,7 +30,7 @@ public:
   }
 
   void test_sum(){
-    CPPUNIT_ASSERT(a.add(10,20)==30);
+    CPPUNIT_ASSERT(a->add(10,20)==30);
     }
 
   CPPUNIT_TEST_SUITE(test_add);
