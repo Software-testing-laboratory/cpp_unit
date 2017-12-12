@@ -7,14 +7,14 @@
 #ifndef INCLUDED_TEST_ADD_HPP
 #define INCLUDED_TEST_ADD_HPP
 
-#include "Calculator.cpp"
+#include "Calculator.hpp"
 #include <TestFixture.h>
 #include <TestSuite.h>
 #include <TestCaller.h>
 #include <extensions/HelperMacros.h>
 
 class test_add : public CppUnit::TestFixture {
-private:
+  private:
   Calculator * a;
 
 public:
@@ -29,8 +29,9 @@ public:
 
   }
 
-  void test_sum(){
-    CPPUNIT_ASSERT(a->add(10,20)==30);
+
+  void test_sum(){ 
+    CPPUNIT_ASSERT(a->sum(10,20)==30);
     }
 
   CPPUNIT_TEST_SUITE(test_add);
