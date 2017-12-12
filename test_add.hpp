@@ -30,12 +30,22 @@ public:
   }
 
 
-  void test_sum(){ 
-    CPPUNIT_ASSERT(a->sum(10,20)==30);
+  void test_lower(){ 
+    CPPUNIT_ASSERT(a->sum(0,0)==0);
     }
+  
+  void test_middle(){
+    CPPUNIT_ASSERT(a->sum(10,100)==110);
+  }
+   
+  void test_upper(){
+    CPPUNIT_ASSERT(a->sum(11111,22222)==33333);
+  }
 
   CPPUNIT_TEST_SUITE(test_add);
-  CPPUNIT_TEST(test_sum);
+   CPPUNIT_TEST(test_lower);
+   CPPUNIT_TEST(test_middle);
+   CPPUNIT_TEST(test_upper);
   CPPUNIT_TEST_SUITE_END();
  
 };
