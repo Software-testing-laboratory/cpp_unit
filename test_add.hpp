@@ -1,45 +1,40 @@
 /***************************************************************
- * @File bigint_test_.hpp
- * Submitted By : Shiva Bhusal
+ * @File test_add.hpp
+ * 
  *
  */
 
-#ifndef INCLUDED_BIGINT_DEAFULT_TEST_HPP
-#define INCLUDED_BIGINT_DEFAULT_TEST_HPP
+#ifndef INCLUDED_TEST_ADD_HPP
+#define INCLUDED_TEST_ADD_HPP
 
-#include "bigint.hpp"
+#include "Calculator.cpp"
 #include <TestFixture.h>
 #include <TestSuite.h>
 #include <TestCaller.h>
 #include <extensions/HelperMacros.h>
 
-class bigint_default_test : public CppUnit::TestFixture {
+class test_add : public CppUnit::TestFixture {
 private:
-  bigint * a;
-  bigint * b; 
+  Calculator * a;
 
 public:
   void setUp()
   {
-    a=new bigint; 
-    b=new bigint;
-
+    a=new Calculator; 
   }
 
   void tearDown()
   {
     delete a; 
-    delete b;
 
   }
 
-  void test_default(){
-      CPPUNIT_ASSERT(*a==0);
-      CPPUNIT_ASSERT(*b==0);
+  void test_sum(){
+    CPPUNIT_ASSERT(a.add(10,20)==30);
     }
 
-  CPPUNIT_TEST_SUITE(bigint_default_test);
-  CPPUNIT_TEST(test_default);
+  CPPUNIT_TEST_SUITE(test_add);
+  CPPUNIT_TEST(test_sum);
   CPPUNIT_TEST_SUITE_END();
  
 };
