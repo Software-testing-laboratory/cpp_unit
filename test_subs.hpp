@@ -1,48 +1,55 @@
 /***************************************************************
- * @File bigint_test_.hpp
- * Submitted By : Shiva Bhusal
+ * @File test_add.hpp
+ * 
  *
  */
 
-#ifndef INCLUDED_BIGINT_DEAFULT_TEST_HPP
-#define INCLUDED_BIGINT_DEFAULT_TEST_HPP
+#ifndef INCLUDED_TEST_SUBS_HPP
+#define INCLUDED_TEST_SUBS_HPP
 
-#include "bigint.hpp"
+#include "Calculator.hpp"
 #include <TestFixture.h>
 #include <TestSuite.h>
 #include <TestCaller.h>
 #include <extensions/HelperMacros.h>
 
-class bigint_default_test : public CppUnit::TestFixture {
+class test_subs : public CppUnit::TestFixture {
 private:
-  bigint * a;
-  bigint * b; 
+  Calculator * a;
 
 public:
   void setUp()
   {
-    a=new bigint; 
-    b=new bigint;
-
+    a=new Calculator; 
   }
 
   void tearDown()
   {
     delete a; 
-    delete b;
 
   }
 
-  void test_default(){
-      CPPUNIT_ASSERT(*a==0);
-      CPPUNIT_ASSERT(*b==0);
-    }
 
-  CPPUNIT_TEST_SUITE(bigint_default_test);
-  CPPUNIT_TEST(test_default);
+  void test_lower(){ 
+    CPPUNIT_ASSERT(a->subs(0,0)==0);
+  }
+  
+  void test_middle(){
+    CPPUNIT_ASSERT(a->subs(100,10)==90);
+  }
+   
+  void test_upper(){
+    CPPUNIT_ASSERT(a->subs(33333,22222)==11111);
+  }
+
+  CPPUNIT_TEST_SUITE(test_subs);
+  CPPUNIT_TEST(test_lower);
+  CPPUNIT_TEST(test_middle);
+  CPPUNIT_TEST(test_upper);
   CPPUNIT_TEST_SUITE_END();
  
 };
 
 #endif
+
 
